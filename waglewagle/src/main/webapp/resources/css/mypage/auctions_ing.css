@@ -1,0 +1,12 @@
+#auctionsContainer>#itemsList>.itemBox>.newMark{
+	width: 40px;
+	height: 25px;
+	background-color: #CF5C5C;
+	border-radius: 3px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

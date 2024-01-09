@@ -1,0 +1,244 @@
+#center{
+	min-height: 700px;
+	height: 80vh;
+}
+
+#container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#formHeader{
+	background-color: #CF5C5C;
+	border-radius: 5px 5px 0px 0px;
+	width:400px;
+	height:40px;
+	text-align: center;
+	color: #fff;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#formContent{
+	border-radius: 0px 0px 10px 10px;
+	background-color: #ffe8e8;
+	width:400px;
+	height:600px;
+	min-height: 470px;
+	color: #635656
+}
+
+#joinForm{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+#inputArea{
+	padding-top: 15px;
+	display:flex;
+	height:100%;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+
+#submitArea{
+	height:100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.formText{
+	color: #635656;
+	font-size: 15px;
+}
+
+.space-between{
+	display: flex;
+	justify-content: space-between;
+}
+
+.basicBtn{
+	background-color: #CF5C5C;
+	border-width: 0;
+	width:80px;
+	height:25px;
+	font-size:10px;
+	color:#fff;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.pinkBtn:hover{
+	background-color: #903030;
+}
+
+.flex-end{
+	display: flex;
+	justify-content: flex-end;
+}
+
+select{
+	background-color: #ffe8e8;
+	border-width: 0 0 1px;
+	border-color: #CF5C5C;
+}
+select:focus {
+  outline: none;
+}
+
+#joinBtn{
+	background-color: #CF5C5C;
+	border-width: 0;
+	width:150px;
+	height:35px;
+	color:#fff;
+	cursor: pointer;
+	border-radius: 15px;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+#joinBtn:hover{
+	background-color: #903030;
+}
+
+#emailCheckText{
+	visibility:hidden;
+	font-size:10px;
+	color: #F44848;
+	margin-top:0;
+}
+
+.flex{
+	display: flex;
+}
+#timer{
+	background-color: #ffe8e8;
+	border-width: 0 0 0px;
+	border-color: #CF5C5C;
+	text-align: center;
+}
+
+#sendNum{
+	background-color: #CF5C5C;
+	border-width: 0;
+	color:#fff;
+	cursor: pointer;
+	
+	font-size:9.5px;
+	width:70px;
+	height:25px;
+	border-radius: 15px 0px 0px 15px;
+}
+
+#sendNum:hover{
+	background-color: #903030;
+}
+
+#validNum{
+	text-align: center;
+}
+
+#validButtons{
+	width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#validCheck{
+	background-color: #CF5C5C;
+	border-width: 0;
+	color:#fff;
+	cursor: pointer;
+	
+	border-radius: 0px 15px 15px 0px;
+	font-size:9.5px;
+	width:70px;
+	height:25px;
+	background: #7C7474;
+}
+
+#validCheck:hover{
+	background-color: #504b4a;
+}
+
+#pwd1{
+	margin-bottom: 5px;
+}
+
+#pwdCheckTxt{
+	visibility:hidden;
+	font-size:10px;
+	color: #F44848;
+	margin-left: auto;
+}
+#nickCheckTxt{
+	visibility:hidden;
+	font-size:10px;
+	color: #F44848;
+	
+}
+
+#name_gender{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#genderArea{
+	margin-right: 10px;
+}
+
+#phoneNumber{
+	display: flex;
+}
+
+
+#interest_dong{
+	margin-bottom:10px;
+}
+
+#addDongBtnArea{
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-around;
+	
+}
+
+.addDongBtn{
+	height : 30px;
+	width: 70px;
+	border-radius: 20px;
+	border : none;
+	color: #fff;
+	background-color: #7C7474;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.addDongBtn:hover{
+	background-color: #504b4a;
+}
+
+input:focus {
+  outline: none;
+}
+
+
+.formInput{
+	background-color: #ffe8e8;
+	border-width: 0 0 1px;
+	border-color: #CF5C5C;
+}
+.formInput::placeholder {
+  color: #A6A0A0;
+  font-size:11px;
+}
+

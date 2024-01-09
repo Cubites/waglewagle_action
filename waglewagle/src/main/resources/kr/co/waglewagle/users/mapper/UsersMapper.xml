@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.users.mapper.UsersMapper">
+	<!-- 유저 정보 조회 -->
+	<select id="userInfo" resultType="kr.co.waglewagle.domain.UsersVO" parameterType="Integer">
+		SELECT 
+			users_id
+			, users_nick 
+			, users_name
+			, users_gender
+			, users_phone
+			, users_rel
+			, users_image
+			, users_addr_list 
+		FROM users WHERE users_id=#{users_id}
+	</select>
+	
+  	<!-- 포인트 조회 -->
+	<select id="checkPoint" resultType="kr.co.waglewagle.domain.PointVO" parameterType="Integer">
+		SELECT
+			point_usable
+			, point_total
+		FROM point
+		WHERE users_id=#{users_id}
+	</select>
+	
+  	<!-- 관심지역 조회 -->
+	<select id="checkFavorAreas" resultType="String" parameterType="Integer">
+		SELECT
+			users_addr_list
+		FROM users
+		WHERE users_id = #{users_id}
+	</select>
+	
+  	<!-- 관심지역 수정 -->
+	<update id="updateAreas" parameterType="java.util.Map">
+		UPDATE users 
+		SET users_addr_list = #{areas}
+		WHERE users_id = #{users_id};
+	</update>
+	
+  	<!-- 비밀번호 일치여부 확인위해 암호화된 비밀번호 select -->
+	<select id="selectPwd" resultType="String" parameterType="Integer">
+		SELECT
+			users_pwd
+		FROM users
+		WHERE users_id = #{users_id}
+	</select>
+	
+	<!-- 마이페이지 비밀번호 변경 -->
+	<update id="pwdChange" parameterType="java.util.Map">
+		UPDATE users
+		SET users_pwd = #{users_pwd}
+		WHERE users_id = #{users_id}
+	</update>
+	
+  	<!-- 문의글 수 확인 -->
+	<select id="countQnas" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*) FROM qnas WHERE users_id = #{users_id}
+	</select>
+	<select id="checkQnas" resultType="kr.co.waglewagle.domain.QnasVO" parameterType="java.util.Map">
+		SELECT 
+			row_number() over(order by qnas_date asc) as rownum
+			, qnas_id 
+			, qnas_title 
+			, qnas_date
+			, qnas_read
+			, qnas_reply
+		FROM qnas
+		WHERE users_id = #{users_id}
+		ORDER BY qnas_date DESC
+		LIMIT #{start_page}, 10;
+	</select>
+	
+	<!-- 회원 포인트 조회 -->
+	<select id="selectPointByUsersId" parameterType="Integer" resultType="kr.co.waglewagle.domain.PointVO">
+		SELECT * FROM point WHERE users_id = #{usersId}
+	</select>
+
+  	<!-- 회원 탈퇴 -->
+	<update id="deleteAccount" parameterType="Integer">
+		UPDATE users SET users_status = 2 WHERE users_id = #{users_id}
+  	</update>
+
+	<!-- 회원 가입 -->	
+	<insert id="join" parameterType="kr.co.waglewagle.domain.UsersVO">
+		INSERT INTO users(
+			users_nick, users_pwd, users_name, users_gender, users_phone, users_email, users_join, users_rel, users_status, users_addr_list, users_image
+		) VALUES(
+			#{users_nick}, #{users_pwd}, #{users_name}, #{users_gender}, #{users_phone}, #{users_email}, NOW(), 42, 0, #{users_addr_list}, #{users_image}
+		)
+	</insert>
+	
+	<!-- email 중복 체크 -->
+	<select id="isEmailDup" parameterType ="String" resultType="Integer">
+		SELECT COUNT(*) FROM users WHERE users_email = #{users_email}
+	</select>
+	
+	<!-- nickname 중복 체크 -->
+	<select id="isNickDup" parameterType ="String" resultType="Integer">
+		SELECT COUNT(*) FROM users WHERE users_nick = #{users_nick}
+	</select>
+	
+	<!-- 회원 아이디 조회 -->
+	<select id="selectUsersId" parameterType="String" resultType="Integer">
+		SELECT users_id FROM users WHERE users_email = #{users_email}
+	</select>
+	
+	<!-- point 테이블 insert -->
+	<insert id="createPoint" parameterType="Integer">
+		INSERT INTO point(
+			users_id
+		) VALUES (
+			#{users_id}
+		)
+	</insert>
+	
+	<!-- 로그인 -->
+	<select id="login" parameterType ="kr.co.waglewagle.domain.UsersVO" resultType="kr.co.waglewagle.domain.UsersVO">
+		SELECT * FROM users WHERE users_email = #{users_email}
+	</select>
+	
+	<!-- 아이디 찾기 -->
+	<select id="findId" parameterType="Map" resultType="kr.co.waglewagle.domain.UsersVO">
+		SELECT * FROM users WHERE users_name=#{users_name} AND users_phone=#{users_phone}
+ 	</select>
+	
+	<!-- 비밀번호 찾기 -->
+	<select id="findPwd" parameterType="Map" resultType="kr.co.waglewagle.domain.UsersVO">
+		SELECT * FROM users WHERE users_name=#{users_name} AND users_email=#{users_email}
+ 	</select>
+ 	
+ 	<!-- 비밀번호 찾기 비밀번호 변경 -->
+	<update id="changePwd" parameterType="Map">
+		UPDATE users 
+		SET users_pwd=#{users_pwd}
+		WHERE users_id=#{users_id}
+	</update>
+
+	<!-- 친밀도 계산 -->
+	<select id="relCalculate" parameterType="Integer" resultType="Integer">
+		SELECT
+			42
+			+ (SELECT COUNT(*) FROM auctions_end WHERE auctions_end_seller = #{users_id} OR auctions_end_buyer = #{users_id})
+			+ (SELECT COUNT(*) FROM goods WHERE goods_access = 1 AND users_id = #{users_id}) * (-2)
+			+ (SELECT COUNT(*) FROM auctions_break WHERE auctions_break_user = #{users_id}) * (-5) AS rel
+	</select>
+	
+	<!-- 친밀도 업로드 -->
+	<update id="relUpdate" parameterType="java.util.Map">
+		UPDATE users
+		SET users_rel = #{rel}
+		WHERE users_id = #{users_id}
+	</update>
+	
+	<!-- 문의 읽음으로 업데이트 -->
+	<update id="readQna" parameterType="int">
+		UPDATE 
+			qnas
+    	SET
+    		qnas_read = 1
+    	WHERE 
+    		qnas_id = #{qnas_id}
+    	AND
+    		qnas_reply is not null
+	</update>
+	
+	<!-- 프로필 이미지 수정 -->
+	<update id="updateProfile" parameterType="java.util.Map">
+		UPDATE users
+		SET users_image = #{img}
+		WHERE users_id = #{users_id}
+	</update>
+</mapper>

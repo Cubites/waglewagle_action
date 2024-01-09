@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.boards.mapper.BoardsMapper">
+	<insert id="addQna" parameterType="kr.co.waglewagle.domain.QnasVO">
+		INSERT INTO qnas
+			(qnas_title, qnas_content, users_id)
+		VALUES
+			(#{qnas_title}, #{qnas_content}, #{users_id});
+	</insert>
+	<select id="showQnaDetail" resultType="kr.co.waglewagle.domain.QnasVO" parameterType="Integer">
+		SELECT 
+			qnas_title
+			, qnas_content
+			, qnas_reply
+		FROM qnas
+		WHERE qnas_id = #{qnas_id}
+	</select>
+</mapper>

@@ -1,0 +1,70 @@
+#auctionsContainer{
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+.pwdBox{
+	width: 450px;
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+.pwdBox:first-child{margin-top: 150px}
+.pwdBox>div{
+	width: 100px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
+	font-size: 15px;
+	font-weight: bold;
+}
+.pwdBox>input{
+	width: 300px;
+	height: 100%;
+	margin-left: 50px;
+	padding-left: 10px;
+	border-radius: 10px;
+	border: 1px solid #000;
+}
+.pwdBox>input:focus{
+	outline: none;
+}
+/* alertMessageBox */
+#alertMessageBox{
+	width: 450px;
+	padding-left: 150px;
+	font-size: 12px;
+	color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	height: 20px;
+}
+/* newPwdConfirm */
+#newPwdConfirm{
+	margin-top: 0;
+}
+/* pwdChangeButton */
+#pwdChangeButton{
+	width: 120px;
+	height: 35px;
+	border-radius: 10px;
+	background-color: #CF5C5C;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+	cursor: pointer;
+}

@@ -1,0 +1,154 @@
+#center{
+	height: 71vh;
+}
+
+#container{
+	height: 80vh;
+	min-height: 470px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+#wallet_img{
+	background-image: url('../../images/wallet.png');
+	width: 80px;
+	height: 80px;
+	display: block;
+}
+
+#title{
+	flex-direction: row;
+	display: flex;
+	height: 20%;
+	align-items: center;
+	margin-left: 50px;
+}
+
+#title_p1{
+	font-weight: 600;
+	font-size: 45px;
+	line-height: 17px;
+	display: flex;
+	margin-left: 20px;
+}
+
+#title_p2{
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 17px;
+	display: flex;
+	color: rgba(0, 0, 0, 0.5);
+	margin-left: 20px;
+}
+
+#content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 400px;
+}
+
+#content_box{
+	width: 40%;
+	max-width: 500px;
+	height: 390px;
+	background: #F3F2F2;
+	border-radius: 22px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#content_box_top{
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#content_p1{
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 17px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#content_p2{
+	width: 300px;
+	height: 30px;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+#content_box_center{
+	height: 130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#content_btns{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#amount_btn{
+	width: 70px;
+	height: 30px;
+	background: #FFD36E;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+#amount_input{
+	display: flex;
+	box-sizing: border-box;
+	width: 310px;
+	height: 40px;
+	background: #FFFFFF;
+	border: 0.1px solid #000000;
+	border-radius: 10px;
+	padding: 12px;
+}
+
+#amount_p{
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 12px;
+	display: none;
+	align-items: center;
+	margin-left: 10px;
+	margin-top: 5px;
+	color: rgba(255, 0, 0, 0.7);
+}
+
+#payment_btn{
+	width: 110px;
+	height: 40px;
+	background-color: #858585;
+	border-radius: 10px;
+	border: none;
+	font-size: large;
+	cursor: pointer;
+	color: #F5F5F5;
+	font-weight: 600;
+}

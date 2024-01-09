@@ -1,0 +1,89 @@
+.dragBlock{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+#center{
+	height: 75vh;
+}
+#container{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#qnaBox{
+	display: flex;
+	flex-direction: column;
+	jusity-content: center;
+	align-items: center;
+}
+#qnaTitleBox,
+#qnaContentBox{
+	width: 600px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: start;
+	margin-top: 10px;
+}
+#qnaTitleBox{ height: 50px; }
+#qnaTitleBox>div{
+	width: 100px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+#qnaTitleBox>input{
+	width: 500px;
+	height: 100%;
+	font-size: 15px;
+	padding-left: 20px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+#qnaTitleBox>input:focus{
+	outline: none;
+}
+#qnaContentBox{ height: 300px; }
+#qnaContentBox>div{
+	width: 100px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+}
+#qnaContentBox>textarea{
+	width: 500px;
+	height: 300px;
+	resize: none;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 10px;
+}
+
+/* qnaSubmitButton */
+#qnaSubmitButton{
+	width: 150px;
+	height: 35px;
+	background-color: #CF5C5C;
+	color: #fff;
+	font-size: 15px;
+	font-weight: bold;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+	cursor: pointer;
+}
+#qnaSubmitButton:hover{
+	background-color: #C05050;
+}

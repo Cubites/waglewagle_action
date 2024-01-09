@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.admins.mapper.StatsMapper">
+	<select id="countGoodsByCategory" resultType="java.util.Map">
+		SELECT 
+			c2.category_name AS domain
+			, cc.category_count AS count
+			, ROUND(cc.category_count / (SELECT COUNT(*) FROM goods) * 100) AS rate
+		FROM category c2 
+		JOIN (
+			SELECT
+				c.category_upper_id 
+				, COUNT(*) AS category_count
+			FROM goods g 
+			JOIN category c 
+			ON c.category_id = g.category_id 
+			GROUP BY c.category_upper_id
+			ORDER BY c.category_upper_id
+		) cc ON cc.category_upper_id = c2.category_id
+	</select>
+	<select id="countGoodsFailByCategory" resultType="java.util.Map">
+		SELECT 
+			c2.category_name AS domain
+			, gaf2.count AS count
+			, ROUND(gaf2.count / (SELECT COUNT(*) FROM auctions_fail) * 100) AS rate
+		FROM category c2 
+		JOIN (
+			SELECT
+				c.category_upper_id AS domain
+				, SUM(gaf.count) AS count
+			FROM category c 
+			JOIN (
+				SELECT
+					g.category_id 
+					, COUNT(*) AS count
+				FROM goods g
+				JOIN auctions_fail af
+				ON g.goods_id = af.goods_id
+				GROUP BY g.category_id
+			) gaf ON gaf.category_id = c.category_id 
+			GROUP BY c.category_upper_id
+		) gaf2 ON gaf2.domain = c2.category_id
+	</select>
+	<select id="countGoodsByCategoryAll" resultType="java.util.Map">
+		SELECT 
+			c.category_name AS domain
+			, gg.count
+			, ROUND(gg.count / (SELECT COUNT(*) FROM goods) * 100) AS rate
+		FROM category c 
+		JOIN (
+			SELECT 
+				category_id 
+				, COUNT(*) AS count
+			FROM goods g
+			GROUP BY category_id
+		) gg ON gg.category_id = c.category_id 
+		ORDER BY c.category_id ASC
+	</select>
+	<select id="countBidsByCategory" resultType="java.util.Map">
+		SELECT 
+			c2.category_name AS domain
+			, cc.category_count AS count
+			, ROUND(cc.category_count / (SELECT COUNT(*) FROM bids) * 100) AS rate
+		FROM category c2 
+		JOIN (
+			SELECT
+				c.category_upper_id 
+				, COUNT(*) AS category_count
+			FROM bids b 
+			JOIN goods g ON g.goods_id = b.goods_id 
+			JOIN category c 
+			ON c.category_id = g.category_id 
+			GROUP BY c.category_upper_id
+			ORDER BY c.category_upper_id
+		) cc ON cc.category_upper_id = c2.category_id
+	</select>
+	
+	<select id="countBidsByCategoryAll" resultType="java.util.Map">
+		SELECT 
+			c.category_name AS domain 
+			, bg.bd_count AS count
+			, ROUND(bg.bd_count / (SELECT COUNT(*) FROM bids) * 100) AS rate
+		FROM category c 
+		JOIN (
+			SELECT
+				g.category_id
+				, COUNT(*) AS bd_count
+			FROM bids b
+			JOIN goods g
+			ON g.goods_id = b.goods_id
+			GROUP BY g.category_id
+		) bg ON bg.category_id = c.category_id  
+		ORDER BY c.category_id ASC
+	</select>
+	
+	<select id="countUsersByMonthLatestYear" resultType="java.util.Map">
+		SELECT 
+			c.yearmonth AS domain
+			, COALESCE(us.count, 0) AS count
+			, '' AS rate
+		FROM (
+			SELECT 
+				DATE_FORMAT(calender_full_date, "%Y-%m") AS yearmonth 
+			FROM calender 
+			WHERE calender_full_date > (SELECT NOW() - INTERVAL 1 YEAR)
+			GROUP BY DATE_FORMAT(calender_full_date, "%Y-%m")
+		) c 
+		LEFT JOIN (
+			SELECT 
+				DATE_FORMAT(users_join, "%Y-%m") AS sign_in_date
+				, COUNT(*) AS count
+			FROM users
+			GROUP BY DATE_FORMAT(users_join, "%Y-%m")
+		) us ON us.sign_in_date = c.yearmonth
+	</select>
+	
+	<select id="countUsersGender" resultType="java.util.Map">
+		SELECT 
+			IF(users_gender = 0, '남', '여') AS domain 
+			, COUNT(*) AS count
+			, ROUND(COUNT(*) / (SELECT COUNT(*) FROM users) * 100) AS rate
+		FROM users
+		GROUP BY users_gender;
+	</select>
+</mapper>

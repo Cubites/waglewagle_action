@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.admins.mapper.NoticeMapper">
+
+    	<sql id="search">
+	    	<where>
+	    		<if test="searchWord != null and searchWord != ''">
+	    			notices_title LIKE '%${searchWord}%'    		
+	    		</if>
+	    	</where>
+    	</sql>
+    	
+    	<select id="count" parameterType="kr.co.waglewagle.domain.NoticesVO" resultType="int">
+    		SELECT COUNT(*) FROM notices 
+    		<include refid="search"/>
+    	</select>
+    	
+        <select id="noticeList" parameterType="kr.co.waglewagle.domain.NoticesVO" resultType="kr.co.waglewagle.domain.NoticesVO">
+            SELECT * FROM wagle.notices
+            <include refid="search"/>
+            ORDER BY notices_id DESC
+            limit #{startIdx},10
+        </select>
+        
+        
+        <insert id="Noticewrite" parameterType="kr.co.waglewagle.domain.NoticesVO">
+        	INSERT INTO notices(
+				`notices_title`,
+				`notices_content`,
+				`notices_date`,
+				`admins_id`
+        	)VALUES(
+        		#{notices_title}
+        		,#{notices_content}
+        		,NOW()
+        		,#{admins_id}
+       		)
+    
+        </insert>
+        
+        <select id="detail" parameterType="int" resultType="kr.co.waglewagle.domain.NoticesVO">
+        	SELECT * FROM notices WHERE notices_id = #{notices_id}
+        </select>
+        
+        <!-- 삭제하기 -->
+        <delete id="Noticedelete" parameterType="int">
+        <!-- return 할 필요가 없을경우는 resultType 작성할필요없음.. -->
+        	delete  from notices where notices_id=#{notices_id}
+        </delete>
+        
+        <update id="NoticeModifyUpdate" parameterType="kr.co.waglewagle.domain.NoticesVO">    
+        	UPDATE notices SET notices_title = #{notices_title},notices_content=#{notices_content} WHERE notices_id=#{notices_id} and admins_id=#{admins_id}
+        </update>
+ 
+</mapper>

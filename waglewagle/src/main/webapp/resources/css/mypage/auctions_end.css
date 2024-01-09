@@ -1,0 +1,16 @@
+#auctionsContainer>#itemsList>.itemBox>.thumbnailBox{
+	height: 80%;
+	border-radius: 5px;
+	/* background-image: url("/resources/images/goods_sample.png"); */
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#auctionsContainer>#itemsList>.itemBox>.thumbnailBox>.stampImg{
+	height: 100%;
+}
+#auctionsContainer>#itemsList>.itemBox>.staticValuesBox>p:last-child{
+	font-size: 14px;
+}

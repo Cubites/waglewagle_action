@@ -1,0 +1,360 @@
+#wrap {
+  width: 100%;
+  height: 100%;
+  height: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#chatBoxes {
+  height: 70%;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+#leftBox1 {
+  width: 40%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*이미지 박스 css*/
+#imgBox {
+  width: 100%;
+
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*이미지 띄우는 영역*/
+#imgContainer {
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+}
+
+#imgContent {
+  height: 60%;
+}
+
+#imagewrap {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#slideList {
+  position: absolute;
+
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+#slideList > .imgs {
+  float: left;
+}
+
+#slideList.active {
+  transition: 0.5s ease-out;
+}
+
+/**/
+#textContent {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#textContent > div {
+  height: 25%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/*글씨 나오는 영역 이미지 순서*/
+#textContent > div > span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#titleContent {
+  width: 62%;
+  margin-right: 0px;
+  text-align: right;
+}
+
+/*img 버튼 영역*/
+.imgButton {
+  width: 6%;
+  position: relative;
+}
+
+.imgButton > img {
+  width: 100%;
+  height: 25px;
+  position: absolute;
+  top: 45%;
+}
+
+/*모바일 거래 가능함 표현*/
+#mobileNotification {
+  width: 80%;
+  height: 12%;
+  border-radius: 10px;
+  border: 1px solid #fe4c4c;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mobileNotification > div > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+#notice1 {
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+
+  line-height: 35px;
+  justify-content: center;
+}
+
+#notice1 > div > span {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#notice2 {
+  font-size: 9px;
+  color: #6c6868;
+  text-align: center;
+}
+
+.leftbutton {
+  height: 9%;
+}
+
+#auctionEnd {
+  width: 80%;
+  background-color: #fe4c4c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  border-radius: 10px;
+}
+
+#endImg {
+  width: 25px;
+  height: 25px;
+  margin-right: 40px;
+}
+
+#reportUser {
+  width: 80%;
+  background-color: #6c6868;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  border-radius: 10px;
+}
+
+#reportImg {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+/*오른쪽 영역*/
+#right {
+  width: 55%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#textArea {
+  width: 100%;
+  height: 90%;
+
+  background-color: #e5c9c9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#placeholders {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  font-size: 10px;
+}
+
+#placeholders > span {
+  display: inline-block;
+  color: #6c6868;
+  text-align: center;
+}
+
+#place1 {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#chatInputArea {
+  margin-top: 15px;
+  height: 5%;
+}
+
+#chatinputwrap {
+  height: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatinput {
+  width: 75%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+#inputbutton {
+  border: 1px solid;
+
+  right: 5%;
+  width: 15%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #ff4356;
+
+  color: white;
+  font-weight: bold;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*채팅 보이는 구역*/
+#chatShowArea {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+  padding: 3px;
+}
+
+.chatop {
+  display: flex;
+  flex-direction: column;
+}
+
+#opNick {
+  padding-left: 10px;
+  text-align: left;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.chatop > .imgAndContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.chatop > .imgAndContent > .chatContentWrap {
+  width: auto;
+  max-width: 70%;
+  margin-left: 5px;
+}
+
+.chatme {
+  display: flex;
+  flex-direction: column;
+}
+
+#myNick {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.chatme > .imgAndContent {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.chatme > .imgAndContent > .chatContentWrap {
+  width: auto;
+  max-width: 70%;
+  text-align: right;
+  margin-right: 5px;
+}
+
+.chatContent {
+  word-break: break-all;
+  font-size: 13px;
+  background-color: white;
+  border-radius: 10px;
+  height: auto;
+  padding: 4px;
+}
+
+.chatimg {
+  width: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.hide {
+  display: none;
+}
+#inputbutton{
+	cursor: pointer;
+}
+#imgleft > img {
+	cursor: pointer;
+}
+#imgRight > img{
+	cursor: pointer;
+}
+
+.leftbutton{
+	cursor: pointer;
+}

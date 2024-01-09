@@ -1,0 +1,103 @@
+#favorFixContainer{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+/* favorListBox */
+#favorListBox{
+	width: 80%;
+	height: 10%;
+	min-width: 550px;
+	min-height: 60px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 200px;
+}
+#favorListBox>#flbTitle{
+	width: 25%;
+	min-width: 150px;
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#favorListBox>#flbItems{
+	width: 75%;
+	min-width: 400px;
+	height: 100%;
+	border-radius: 10px;
+	background-color: #FFE7E7;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+#favorListBox>#flbItems>.favorArea{
+	width: 30%;
+	height: 60%;
+	min-width: 120px;
+	min-height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #fff;
+	margin-left: 10px;
+}
+#favorListBox>#flbItems>.favorArea>div{
+	font-size: 15px;
+	font-weight: bold;
+	width: 60px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#favorListBox>#flbItems>.favorArea>img{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+#favorListBox>#flbItems>#addArea{
+	width: 30%;
+	height: 60%;
+	min-width: 120px;
+	min-height: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #fff;
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	cursor: pointer;
+}
+/* saveButton */
+#saveButton{
+	width: 25%;
+	height: 5%;
+	min-width: 150px;
+	min-height: 35px;
+	margin-top: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #CF5C5C;
+	color: #fff;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}

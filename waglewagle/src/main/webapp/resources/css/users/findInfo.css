@@ -1,0 +1,218 @@
+#center{
+	min-height: 480px;
+	height: 80vh;
+}
+
+#container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.space-between{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+#pwd1{
+	margin-bottom: 15px;
+}
+
+#pwdCheckTxt{
+	width:100%;
+	visibility:hidden;
+	font-size:10px;
+	color: #F44848;
+	margin-left: auto;
+}
+
+#passwordArea{
+	margin-bottom: 30px;
+}
+
+#findFormArea{
+	margin-bottom: 100px;
+}
+
+#formHeaderArea{
+	display: flex;
+	flex-direction: row;
+}
+
+#formHeaderId{
+	background-color: #CF5C5C;
+	border-radius: 5px 5px 0px 0px;
+	width:200px;
+	height:40px;
+	text-align: center;
+	color: #fff;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#formHeaderPwd{
+	background-color: #E8E8E8;
+	color: black;
+	border-radius: 5px 5px 0px 0px;
+	width:200px;
+	height:40px;
+	text-align: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+#formContent{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0px 0px 10px 10px;
+	background-color: #ffe8e8;
+	width:400px;
+	height: 340px;
+	min-height: 340px;
+	color: #635656
+}
+
+
+#findIdForm{
+	height: 100%;
+	margin: 0 55px 0 55px;
+}
+#findPwdForm{
+	height: 100%;
+	margin: 0 55px 0 55px;
+}
+
+.hide{
+	display:none;
+}
+
+#inputAreaId{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height:70%;
+
+}
+
+.nameArea{
+	margin-bottom: 30px;
+}
+
+#phoneNumber{
+	display:flex;
+}
+
+#inputAreaPwd{
+	padding-top: 28px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height:70%;
+
+}
+
+#email{
+	margin-bottom: 10px;
+}
+
+#emailArea{
+	margin-bottom: 5px;	
+}
+
+.wrap{
+	display:flex;
+}
+
+
+#buttonArea{
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*아이디 찾기, 비밀번호 찾기 버튼*/
+.btn{
+
+	border-width: 0;
+	width:285px;
+	height:40px;
+	color:#fff;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 18px;
+	cursor: pointer;
+	background-color: #CF5C5C;
+}
+
+.btn:hover{
+	background-color: #903030;
+}
+
+
+/* 인증번호 발송, 확인 버튼 */
+.basicBtn{
+	background-color: #CF5C5C;
+	border-width: 0;
+	width:80px;
+	height:25px;
+	font-size:10px;
+	color:#fff;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.basicBtn:hover{
+	background-color: #903030;
+}
+
+#timer{
+	background-color: #ffe8e8;
+	border-width: 0 0 0px;
+	border-color: #CF5C5C;
+	text-align: center;
+}
+
+
+.formText{
+	color: #635656;
+	font-size: 15px;
+}
+
+.space-between{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.flex-end{
+	display: flex;
+	justify-content: flex-end;
+}
+
+select{
+	background-color: #ffe8e8;
+	border-width: 0 0 1px;
+	border-color: #CF5C5C;
+}
+select:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.formInput{
+	background-color: #ffe8e8;
+	border-width: 0 0 1px;
+	border-color: #CF5C5C;
+}
+

@@ -1,0 +1,48 @@
+*{
+	box-sizing: border-box;	
+}
+
+.hide{
+	display: none;
+}
+
+#quickContainer{
+	width:90px;
+	height: 200px;
+	position:absolute;
+	right: 5%;
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: column;
+	
+}
+
+.center{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#textContainer{
+	height: 40%;
+	border: solid 2px gray;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#bidNotice, #qnaNotice{
+	text-align: center;
+}
+
+#imgContainer{
+	display: flex;
+	justify-content: center;
+	align-content: center;	
+}
+
+#imgContainer > img{
+	width: 75px;
+}

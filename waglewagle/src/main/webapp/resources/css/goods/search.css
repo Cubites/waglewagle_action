@@ -1,0 +1,235 @@
+#center{
+	height: auto;
+	min-height: 75vh;
+}
+
+#container{
+	height: 100%;
+	min-height: 470px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.hide{
+	display: none;
+}
+
+#searchBar {
+	background-color: #CF5C5C;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#category1 {
+	width: 20%;
+	height: 30px;
+	background-color: white;
+	border: 0.1px solid black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left:5px;
+}
+
+#check_img {
+	width: 20px;
+	height: 20px;
+	margin: 0 2px;
+}
+
+#tri_img {
+	width: 15px;
+	height: 15px;
+	margin: 0 3px;
+}
+
+#category2 {
+	width: 20%;
+	height: 30px;
+	background-color: white;
+	border: 0.1px solid black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	disabled: true;
+	padding-left:5px;
+}
+
+#searchBox {
+	width: 40%;
+	height: 30px;
+	background-color: white;
+	border: 0.1px solid black;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#searchIcon {
+	width: 20px;
+	height: 20px;
+	margin: 0 10px;
+}
+
+#searchWordByBar {
+	border: none;
+	width: 90%;
+}
+
+#searchWordByBar:focus {outline:none;}
+
+#result_div {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px;
+}
+
+.result {
+	margin: 10px;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+#result_comment {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+#sort_div {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#recent, #lower, #higher {
+	margin: 0 17px;
+	font-weight: 600;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+#list_div {
+	display: grid;
+	margin: 30px 20px;
+	justify-content:start;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.item {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+}
+
+.item{
+	width:100%;
+	height: 100%;
+	margin: 5%;
+	padding: 1px;
+}
+
+.popProduct{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 5%;
+	padding: 1px;
+}
+
+.productImg > img{
+	width: 60%;
+}
+
+.productAddrArea{
+	margin-top:10px;
+	width:80%;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
+
+.leftTime{
+	display: none;
+    justify-content: center;
+    align-items: center;
+	width:100%;
+	height: 120%;
+	font-size:30px;
+	color: red;
+	border-radius: 25px;
+	font-weight: bold;
+	position:absolute;
+	top:50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 20;
+	box-shadow:2px 4px 4px 2px darkgray;
+	background-color: rgba(0,0,0,0.7);
+	cursor: pointer;
+}
+
+#popularTitle{
+	height: 10%;
+	font-size: 23px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	
+}
+
+.productImg{
+	height: 30%;
+}
+
+.productTitle{
+	margin-bottom: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+}
+
+.avgPriceTitle, .expTitle{
+	font-size: 15px;
+	color: #a69c9c;
+}
+.productAvgPrice, .productExp{
+	font-size: 15px;
+	color: #a69c9c;
+}
+
+.avgPrice_expDateArea{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	width:100%;
+}
+
+.avg_expTitle{
+	display: flex;
+	flex-direction: column;
+}
+
+.avg_expValue{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}

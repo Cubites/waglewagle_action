@@ -1,0 +1,134 @@
+#auctionsContainer{
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+/* acTitle */
+#auctionsContainer>#acTitle{
+	width: 100%;
+	height: 5%;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	font-size: 20px;
+}
+#auctionsContainer>#acTitle>span{font-weight: bold;}
+/* /acTitle */
+/* itemsList */
+#auctionsContainer>#itemsList{
+	width: 100%;
+	height: 85%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+#auctionsContainer>#itemsList>#noItems{
+	font-size: 25px;
+	font-weight: bold;
+	margin: 80px auto;
+}
+#auctionsContainer>#itemsList>.itemBox{
+	width: 100%;
+	height: 17%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #F4F4F4;
+	border-radius: 10px;
+	margin: 1% 0;
+}
+#auctionsContainer>#itemsList>.itemBox.auctionsItem{
+	position: relative;
+}
+#auctionsContainer>#itemsList>.itemBox:hover{
+	background-color: #E4E4E4
+}
+#auctionsContainer>#itemsList>.itemBox>.wayMark{
+	height: 50%;
+}
+#auctionsContainer>#itemsList>.itemBox>.goodsThumb{
+	height: 80%;
+	border-radius: 5px;
+}
+#auctionsContainer>#itemsList>.itemBox>.itemTitle{
+	width: 30%;
+}
+#auctionsContainer>#itemsList>.itemBox>.varPriceBox{
+	width: 20%;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+#auctionsContainer>#itemsList>.itemBox>.staticValuesBox{
+	width: 20%;
+	font-weight: bold;
+	text-align: left;
+}
+#auctionsContainer>#itemsList>.itemBox>.staticValuesBox>p:last-child{
+	color: red;
+}
+#auctionsContainer>#itemsList>.itemBox.auctionsItem>.blockBoxForAccess{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(100, 100, 100, 0.7);
+	border-radius: 10px;
+	color: #fff;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+#auctionsContainer>#itemsList>.itemBox.auctionsItem>.blockBoxForAccess>p:first-child{
+	font-size: 15px;
+}
+#auctionsContainer>#itemsList>.itemBox.auctionsItem>.blockBoxForAccess>p:last-child{
+	font-size: 10px;
+}
+/* /itemsList */
+#auctionsContainer>#pagingBox{
+	width: 100%;
+	height: 10%;
+}
+#auctionsContainer>#pagingBox>ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#auctionsContainer>#pagingBox>ul>li{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	overflow: hidden;
+	margin: 0 1%;
+}
+#auctionsContainer>#pagingBox>ul>li:hover>a{
+	background-color: #CF5C5C;
+	color: #fff;
+}
+#auctionsContainer>#pagingBox>ul>li.nowPage>a{
+	background-color: #CF5C5C;
+	color: #fff;
+}
+#auctionsContainer>#pagingBox>ul>li>a{
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

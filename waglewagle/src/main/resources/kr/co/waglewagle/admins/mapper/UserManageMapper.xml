@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.admins.mapper.UserManageMapper">
+
+		<sql id="search">
+	    	<where>
+	    		<if test="searchWord != null and searchWord != ''">
+	    			users_name LIKE '%${searchWord}%'	
+	    		</if>
+	    	</where>
+    	</sql>
+
+    	<select id="count" parameterType="kr.co.waglewagle.domain.GoodsVO" resultType="int">
+    		SELECT COUNT(*) FROM users
+    		<include refid="search"/>
+    	</select>
+    	
+		<select id="userList" resultType="kr.co.waglewagle.domain.UsersVO">
+            SELECT * FROM wagle.users
+            <include refid="search"/>
+            ORDER BY users_name DESC
+        </select>
+        
+		<update id="usersAccess" parameterType="java.util.Map">
+			UPDATE users SET users_status=#{users_status} WHERE users_id=#{users_id};
+		</update>
+
+		<select id="adminUsersList" parameterType="kr.co.waglewagle.domain.UsersVO" resultType="kr.co.waglewagle.domain.UsersVO">
+			select 
+				u.users_id 
+			    ,u.users_nick
+			    ,u.users_name
+			    , ifnull(r.cnt , 0) cnt
+			    ,u.users_status
+			from users u
+			left join
+			(select 
+				users_id,
+				count(*) cnt
+			from reports
+			group by users_id) r
+			on u.users_id = r.users_id
+			<if test="searchWord != null and searchWord != ''">
+    			where users_name LIKE '%${searchWord}%'
+    		</if>
+			order by u.users_id desc
+			limit #{startIdx},10;
+        </select>
+		
+</mapper>

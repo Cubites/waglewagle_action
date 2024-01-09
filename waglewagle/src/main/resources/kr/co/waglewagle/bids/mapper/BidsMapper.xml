@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.bids.mapper.BidsMapper">
+	<select id="countBidsByGoodsId" parameterType="Integer" resultType="Integer">
+		SELECT COUNT(distinct users_id) as cnt FROM bids WHERE goods_id = #{goodsId};
+	</select>
+	
+	<select id="checkPoint" parameterType="kr.co.waglewagle.bids.won.BidsFormVO" resultType="Integer">
+	SELECT  d.bids_max_pre
+	FROM(
+	SELECT point.users_id as users_id, goods_id, MAX(bids_price) as bids_max_pre, point_usable 
+	FROM bids inner join point on(bids.users_id = point.users_id) 
+	where point.users_id =#{users_id} AND goods_id=#{goods_id} 
+	group by point.users_id,goods_id,point_usable) d
+	WHERE
+	<![CDATA[d.bids_max_pre <= #{bids_price}]]>
+	AND 
+	<![CDATA[d.point_usable - #{bids_price} >=0]]>
+	</select>
+	
+	<select id="checkInitial" parameterType="kr.co.waglewagle.bids.won.BidsFormVO" resultType="Integer">
+		select count(*) from bids where users_id = #{users_id} AND goods_id = #{goods_id} 
+	</select>
+	
+	<insert id="insertBids" parameterType="kr.co.waglewagle.bids.won.BidsFormVO">
+		INSERT INTO bids (users_id,goods_id,bids_price) 
+		VALUES(#{users_id},#{goods_id},#{bids_price})
+	</insert>
+	
+	<update id="updateUsablePoint" parameterType="kr.co.waglewagle.bids.won.BidsFormVO">
+		UPDATE point set point_usable=point_usable-#{bids_price} WHERE users_id = #{users_id}
+	</update>
+	
+	<select id="selectMaxBidsPriceByUsersId" parameterType="map" resultType="Integer">
+		SELECT MAX(bids.bids_price) FROM bids where goods_id = #{goods_id} AND users_id =#{users_id};
+
+	</select>
+		<update id="updateAvgPrice" parameterType="Integer">
+		 UPDATE goods SET goods_avg_price = (SELECT ROUND(AVG(bids_price)) FROM bids WHERE goods_id = #{goods_id}) WHERE goods_id = #{goods_id}
+	</update>
+	
+</mapper>

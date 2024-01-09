@@ -1,0 +1,92 @@
+#wrap {
+  width: 100%;
+  height: 100%;
+  height: 1000px
+}
+
+#reportBox {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#reportForm{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+#reportBox > div {
+  margin: 15px;
+}
+
+#reportTop {
+  width: 70%;
+  height: 7%;
+  border-radius: 20px;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#reportMid {
+  border-radius: 20px;
+
+  width: 70%;
+  height: 50%;
+
+  border: 1px solid black;
+}
+
+#textBox {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #f1f1f1;
+}
+
+#reportFooter {
+  display: flex;
+  width: 40%;
+  height: 5%;
+  justify-content: space-evenly;
+}
+
+#reportFooter > div {
+  width: 40%;
+  text-align: center;
+  height: 100%;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#submit {
+  background-color: #cf5c5c;
+  color: white;
+  font-weight: bold;
+}
+
+#cancle {
+  background-color: #6c6868;
+  color: white;
+  font-weight: bold;
+}
+#reson{
+	background-color: #f1f1f1;
+}

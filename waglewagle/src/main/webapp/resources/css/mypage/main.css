@@ -1,0 +1,548 @@
+/* mypageTop */
+#mypageTop{
+	width: 100%;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox{
+	width: 100%;
+	height: 350px;
+	background-color: #FBEFEF;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft{
+	width: 25%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox{
+	width: 80%;
+	height: 90%;
+	background-color: #ffffff;
+	padding: 5% 10%;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#user_name{
+	width: 100%;
+	height: 10%;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile{
+	width: 50%;
+	height: 40%;
+	min-width: 120px;
+	min-height: 120px;
+	border: 2px solid #d0d0d0;
+	position: relative;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile:hover>div{
+	display: flex;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile>div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(200, 200, 200, 0.5);
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile>div input{
+	display: none;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile>div>form>img{
+	width: 50px;
+	height: 50px;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#profile>img{
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox{
+	width: 100%;
+	height: 20%;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop>p{
+	height: 100%;
+	margin-right: 5px;
+	font-size: 12px;
+	font-weight: bold;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop>#pointDetail{
+	width: 15%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop>#pointDetail>img{
+	height: 70%; 
+	display: block;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop>#pointDetail>#pointInfo{
+	position: absolute;
+	top: -60px;
+	left: 0;
+	background-image: url("/resources/images/talk_cloud.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	font-size: 10px;
+	color: #ffffff;
+	width: 160px;
+	height: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 15px;
+	display: none;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointTop>#pointDetail>img:hover+#pointInfo{
+	display: flex;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointBottom{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointBottom>img{
+	height: 100%;
+	display: block;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointBox>#pointBottom>div{
+	height: 100%;
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: bold;
+	display:flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointTotalBox{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointTotalBox>p{
+	font-size: 12px;
+	font-weight: bold;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#pointTotalBox>div{
+	font-weight: bold;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#rechargeButton{
+	width: 70%;
+	height: 10%;
+	background-color: #FFD36E;
+	border-radius: 10px;
+}
+#mypageTop>#userInfoBox>#userInfoLeft>#userBox>#rechargeButton>a{
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight{
+	width: 75%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox{
+	width: 90%;
+	height: 40%;
+	margin-bottom: 10px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>div:first-child{
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>div:first-child>span{font-weight: bold;}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea{
+	width: 100%;
+	height: 70%;
+	background-color: white;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft{
+	width: 80%;
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar{
+	width: 90%;
+	height: 10px;
+	border-radius: 5px;
+	background-color: #D9D9D9;
+	position: absolute;
+	top: 60%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#favorRate{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: #F76B7A;
+	border-radius: 5px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#favorPin{
+	position: absolute;
+	width: 200px;
+	height: 500%;
+	top: -500%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#favorPin>div:first-child{
+	font-size: 12px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#favorPin>img{
+	display: block;
+	width: 15px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#startEnd{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: -150%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#startEnd>p:first-child{
+	position: absolute;
+	text-align: center;
+	width: 30px;
+	left: -15px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaLeft>#favorBar>#startEnd>p:last-child{
+	position: absolute;
+	text-align: center;
+	width: 30px;
+	right: -15px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight{
+	width: 10%;
+	height: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight>img{display: block}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight>img:first-child{
+	width: 70%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight>img:nth-child(2){
+	width: 20%;
+	position: absolute;
+	top: 10%;
+	right: -10%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight>#favorDetail{
+	background-image: url("/resources/images/talk_cloud2.png");
+	background-size: cover;
+	width: 120px;
+	height: 80px;
+	position: absolute;
+	font-size: 10px;
+	padding-left: 10px;
+	padding-top: 3px;
+	color: #fff;
+	font-weight: bold;
+	top: -75px;
+	right: -50px;
+	display: none;
+	z-index: 1000;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>#pointArea>#pointAreaRight>img:nth-child(2):hover+#favorDetail{
+	display: block;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#favorBox>div:last-child{
+	width: 100%;
+	height: 20%;
+	font-size: 10px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#mypageTop>#userInfoBox>#userInfoRight>#logBox{
+	width: 90%;
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>div:first-child{
+	width: 100%;
+	height: 20%;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea{
+	width: 100%;
+	height: 80%;
+	background-color: #fff;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea .countSet{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea .countTitle{
+	width: 100%;
+	height: 20%;
+	font-size: 12px;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea .countBox{
+	width: 70px;
+	height: 70px;
+	background-color: #E9E9E9;
+	border-radius: 35px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea>#logAreaLeft{
+	width: 10%;
+	height: 90%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea>#logAreaCenter{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 60%;
+	height: 90%;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea>#logAreaCenter>img{
+	width: 8%;
+	margin-top: 20px;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea>#logAreaCenter>div{
+	width: 20%;
+	height: 100%;
+	display: flex;
+	flex-direct: column;
+	justify-contents: center;
+	align-items: center;
+}
+#mypageTop>#userInfoBox>#userInfoRight>#logBox>#logArea>#logAreaRight{
+	width: 10%;
+	height: 90%;
+}
+/* mypageBottom */
+#mypageBottom{
+	width: 100%;
+	height: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+}
+#mypageBottom>#mypageMenu{
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	text-align: left;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu:first-child{
+	margin-bottom: 20px;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu>div{
+	width: 100%;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu>ul{
+	width: 100%;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu>ul>li{
+	width: 100%;
+	height: 30px;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu>ul>li:hover>a{
+	font-weight: bold;
+	color: #CF5C5C;
+}
+#mypageBottom>#mypageMenu>.mypageDetailMenu>ul>li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 17px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+#mypageBottom>#mypageMenu>#cancelMenu{
+	position: absolute;
+	bottom: 5%;
+	left: 10%;
+	width: 90%;
+	align-self: end;
+	font-size: 12px;
+	font-weight: bold;
+	colir: #333;
+	cursor: pointer;
+}
+#mypageBottom>#mypageMenu>#cancelMenu:hover{
+	color: #CF5C5C;
+}
+
+#mypageBottom>#mypageList{
+	width: 75%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+
+/* 회원탈퇴 */
+#deleteAccountWindow{
+	position: absolute;
+	z-index: 10000;
+	top: 0;
+	background-color: rgba(150, 150, 150, 0.5);
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+#deleteAccountWindow>#infoInputBox{
+	margin: 0 auto;
+	margin-top: 20vh;
+	width: 600px;
+	height: 300px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+#deleteAccountWindow>#infoInputBox>div{
+	width: 500px;
+	height: 70px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#deleteAccountWindow>#infoInputBox>#pwdBox>div{
+	width: 100px;
+	height: 30px;
+}
+#deleteAccountWindow>#infoInputBox>#pwdBox>input{
+	width: 300px;
+	height: 30px;
+	padding-left: 5px;
+}
+#deleteAccountWindow>#infoInputBox>#deleteButton{
+	width: 130px;
+	height: 40px;
+	background-color: #CF5C5C;
+	border-radius: 10px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+#deleteAccountWindow>#infoInputBox>#alertAboutDelete{
+	font-weight: bold;
+	color: red;
+}
+#deleteAccountWindow>#infoInputBox>#closeDeleteWindow{
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 5px;
+	font-size: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}

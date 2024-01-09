@@ -1,0 +1,113 @@
+#qnaContainer{
+	width: 90%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+#qnaList{
+	width: 600px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+/* header */
+#qnaListHeader{
+	width: 100%;
+	height: 40px;
+	display: flex;
+	flex-direction: row;
+	border-top: 3px solid #333;
+	border-bottom: 3px solid #333;
+}
+#qnaListHeader>div{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#qnaListHeader>div:nth-child(1){width: 100px}
+#qnaListHeader>div:nth-child(2){width: 400px}
+#qnaListHeader>div:nth-child(3){width: 100px}
+
+/* content */
+#qnaList>ul{
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+#qnaList>ul>li{
+	width: 100%;
+	height: 10%;
+	border-bottom: 2px solid #666;
+}
+#qnaList>ul>#noItems{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#qnaList>ul>li>a{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+#qnaList>ul>li>a>div{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #999;
+}
+#qnaList>ul>li>a>div:nth-child(1),
+#qnaList>ul>li>a>div:nth-child(3){width: 100px;}
+#qnaList>ul>li>a>div:nth-child(2){
+	width: 400px;
+	align-items: start;
+	color: #000;
+}
+/* pagination */
+#qnaContainer>#pagingBox{
+	width: 100%;
+	height: 10%;
+}
+#qnaContainer>#pagingBox>ul{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+#qnaContainer>#pagingBox>ul>li{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	overflow: hidden;
+	margin: 0 1%;
+}
+#qnaContainer>#pagingBox>ul>li:hover>a{
+	background-color: #CF5C5C;
+	color: #fff;
+}
+#qnaContainer>#pagingBox>ul>li.nowPage>a{
+	background-color: #CF5C5C;
+	color: #fff;
+}
+#qnaContainer>#pagingBox>ul>li>a{
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

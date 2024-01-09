@@ -1,0 +1,215 @@
+<!-- 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}-->
+#header {
+  width: 100%;
+  height: 10vh;
+  min-height: 150px;
+}
+#headerContainer {
+  width: 80%;
+  height: 100%;
+  min-width: 1280px;
+  min-height: 150px;
+  margin: 0 auto;
+}
+#footer {
+  width: 100%;
+  height: 10vh;
+  min-height: 100px;
+}
+#footerContainer {
+  width: 80%;
+  height: 100%;
+  min-width: 1280px;
+  min-height: 100px;
+  margin: 0 auto;
+}
+-->
+
+
+ 	.errorMessage{
+  		color: red;
+  		font-size: small;
+  		font-weight: bold;
+  	}
+  	#addrSearchButton{
+  		border-radius: 5px;
+  		color:white;
+  		border: none;
+  	}
+    #inputBoxContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      padding-left: 7%;
+      
+    }
+
+    .inputlable {
+      display: block;
+    }
+
+    .inputBox {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2%;
+      margin-left: 3%;
+
+    }
+
+   	.goodsInput {
+      width: 25%;
+      height: 30px;
+
+      background-color: #EBEBEB;
+      border-radius: 5px;
+      border: none;
+      text-align: center;
+      font-weight: bold;
+
+    }
+
+    .pointer {
+      color: red;
+    }
+
+    .inputlabel {
+      font-weight: bold;
+    }
+
+    #textBox {
+      width: 450px;
+      height: 170px;
+      background-color: #EBEBEB;
+      border-radius: 10px;
+	  padding: 10px;
+	  resize: none;
+    }
+
+    #submitbutton {
+      display: flex;
+      justify-content: center;
+    }
+
+    input[type=submit] {
+      display: inline;
+      color: white;
+      font-size: large;
+    }
+
+    #submits {
+      border-radius: 5px;
+      width: 200px;
+
+      background-color: #CF5C5C;
+      height: 50px;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      font-size: large;
+      font-weight: bold;
+      color: white;
+
+      margin-bottom: 5%;
+    }
+
+    #checkimg {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+    }
+
+    select {
+      width: 250px;
+      height: 30px;
+    }
+
+    #imageBox {
+      width: 650px;
+      background-color: #EBEBEB;
+      border-radius: 5px;
+      padding-top: 1%;
+
+    }
+
+    .selectedImageBox {
+
+      min-width: 100px;
+      min-height: 100px;
+      max-width: 100px;
+      max-height: 100px;
+      margin: 0.5%;
+
+    }
+
+    .imageSets {
+      position: relative;
+      display: inline-block;
+      margin: 0.5%;
+
+    }
+
+    .image_th {
+
+      border: 4px solid #71DF8A;
+    }
+
+    .image_text {
+
+      position: absolute;
+      top: -15%;
+      left: 10%;
+
+      color: black;
+      font-size: 1%;
+
+    }
+
+    .xbutton {
+      position: absolute;
+      top: -15%;
+      left: 85%;
+      width: 15%;
+
+    }
+
+    #fileLengthText {
+      display: inline-block;
+      margin-left: 60px;
+
+    }
+
+    #clipImage {
+      width: 1.3%;
+    }
+
+    input[type="button"] {
+      width: 10%;
+      margin-left: 1%;
+    }
+
+    #addrDong {
+      text-align: center;
+      font-weight: bold;
+      width: 20%;
+    }
+
+    #goodsDate {
+      width: 20%;
+    }
+
+	#goods_title{
+		text-align: left;
+		padding-left: 5px;
+	}

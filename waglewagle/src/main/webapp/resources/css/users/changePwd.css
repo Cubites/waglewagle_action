@@ -1,0 +1,111 @@
+#center{
+	min-height: 480px;
+	height: 80vh;
+}
+
+#container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+#formHeaderArea{
+	display: flex;
+	flex-direction: row;
+}
+
+#formHeader{
+	background-color: #CF5C5C;
+	border-radius: 5px 5px 0px 0px;
+	width:400px;
+	height:40px;
+	text-align: center;
+	color: #fff;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#formContent > form{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#formContent{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0px 0px 10px 10px;
+	background-color: #ffe8e8;
+	width:400px;
+	height: 340px;
+	min-height: 340px;
+	color: #635656
+}
+
+#inputAreaChangePwd{
+	margin-bottom: 30px;
+}
+
+#pwdCheckTxt{
+	visibility:hidden;
+	font-size:10px;
+	color: #F44848;
+	margin-left: auto;
+}
+
+#buttonArea{
+	height: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn{
+
+	border-width: 0;
+	width:285px;
+	height:40px;
+	color:#fff;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 18px;
+	cursor: pointer;
+	background-color: #CF5C5C;
+}
+
+.btn:hover{
+	background-color: #903030;
+}
+
+
+
+.space-between{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.flex-end{
+	display: flex;
+	justify-content: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
+.formInput{
+	background-color: #ffe8e8;
+	border-width: 0 0 1px;
+	border-color: #CF5C5C;
+}
+.formInput::placeholder {
+  color: #A6A0A0;
+  font-size:10px;
+}
+

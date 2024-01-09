@@ -1,0 +1,272 @@
+*{
+	box-sizing: border-box;
+}
+#center{
+	min-height: 1800px;
+	height: 80vh;
+}
+#container{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+.hide{
+	display: none;
+}
+.space-between{
+	display: flex;
+	justify-content: space-between;
+}
+#bannerArea{
+	width:100%;
+	height:510px;
+	min-height: 400px;
+	background-image: url("/waglewagle/src/main/webapp/resources/images/bannertest.png");
+}
+.swiper-button-prev, .swiper-button-next{
+	color: #CF5C5C;
+}
+.noItems{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fcf2f2;
+	border-radius: 25px;
+}
+.noItemsValue{
+	font-size: 20px;
+}
+.popProduct{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.productImg > img{
+	 width: 60%; 
+
+}
+.productAddrArea{
+	margin-top:10px;
+	width:80%;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+}
+.productAddrArea > #locImg{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 5px;
+}
+#locImg > img {
+	object-fit:cover;
+    width: 10px;
+    height: 15px;
+}
+.leftTime{
+	display: none;
+    justify-content: center;
+    align-items: center;
+	width:100%;
+	height: 120%;
+	font-size:30px;
+	color: red;
+	border-radius: 25px;
+	font-weight: bold;
+	position:absolute;
+	top:50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 20;
+	box-shadow:2px 4px 4px 2px darkgray;
+	background-color: rgba(0,0,0,0.7);
+	cursor: pointer;
+}
+.visibilityHidden{
+	visibility: hidden;
+}
+#popularProductsArea{
+	height:400px;
+	width:100%;
+}
+#popularTitle{
+	height: 10%;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 0 10px 15px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	
+}
+
+
+#popularProductsArea > .swiper{
+	width:100%;
+	height:75%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#popularProductsArea > .swiper-wrapper{
+	width:100%;
+	height:100%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#swiper-wrapper-caa864c776e51c51{
+	height: 100%;
+}
+
+.productImg{
+	height: 30%;
+}
+.productTitle{
+	margin-bottom: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+}
+.avgPriceTitle, .expTitle{
+	font-size: 15px;
+	color: #a69c9c;
+}
+.productAvgPrice, .productExp{
+	font-size: 15px;
+	color: #a69c9c;
+}
+.productAddr{
+	font-size: 13px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+#popularProducts{
+	width:90%;
+	height:100%;
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#newRegProductsArea{
+	height:380px;
+	width:100%;
+}
+#newRegProductsTitle{
+	font-size: 20px;
+	font-weight: 600;
+	margin: 0 0 10px 15px;
+}
+#newRegProductsArea > .swiper{
+	width:100%;
+	height:75%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.avgPrice_expDateArea{
+	display: flex;
+	flex-direction: row;
+	justify-content:space-evenly;
+	width:100%;
+}
+.avg_expTitle{
+	display: flex;
+	flex-direction: column;
+}
+.avg_expValue{
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+#nearProductsArea{
+	height:380px;
+	width:100%;
+}
+#nearProdHeader{
+	display:flex;
+	width: 50%;
+	margin-bottom: 10px
+}
+#nearProductsTitle{
+	font-size: 20px;
+	font-weight: 600;
+	margin: 5px 15px;
+}
+#location{
+	display:flex;
+	width:60%;
+	align-items: center;
+}
+#locNameArea{
+	width : 100%;
+	display: flex;
+}
+.locName{
+	font-size:17px;
+	color: rgba(63, 63, 63, 0.55);
+	margin: 0 10px;
+}
+#nearProductsArea > .swiper{
+	width:100%;
+	height:75%;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* swiper */
+
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	width:100%;
+	heigth:100%;
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	height:450px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.swiper-slide.popSlideEl,.swiper-slide.dongSlideEl{
+	height: 100%;
+}
+
+
+.swiper-slide > img{
+	height:100%;
+	object-fit: cover;
+}
+.relative{
+	position:relative;
+}
+.swiper-slide.smallEl{
+	width:13%;
+	height: 100%;
+}
+@media (max-width: 760px) {
+	.swiper-button-next {
+		right: 20px;
+		transform: rotate(90deg);
+	}
+
+	.swiper-button-prev {
+		left: 20px;
+		transform: rotate(90deg);
+	}
+}
+
+/* swiper */

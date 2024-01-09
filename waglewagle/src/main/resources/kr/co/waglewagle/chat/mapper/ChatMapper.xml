@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.waglewagle.chat.mapper.ChatMapper">
+	
+	
+	
+	<select id="selectAuctionIngAndUsers" parameterType="Integer" resultType="java.util.HashMap">
+	    select *
+		FROM (	SELECT auctions_ing_id, auctions_ing_seller, auctions_ing_buyer, auctions_ing_price, auctions_date,auctions_seller_read,auctions_buyer_read,
+				goods.goods_id, goods_title,goods_comment,goods_th_img, goods_address, goods_access,category_id
+ 				FROM  auctions_ing inner join goods on (auctions_ing.goods_id = goods.goods_id) 
+ 				WHERE goods.goods_id = #{goodsId}) a, users u
+		WHERE (a.auctions_ing_seller = u.users_id OR a.auctions_ing_buyer = u.users_id);
+	</select>
+	
+	<select id="selectAllChat" parameterType="map" resultType="kr.co.waglewagle.domain.ChatVO">
+		SELECT * FROM chat WHERE (chat_send = #{userId} OR chat_recieve = #{userId}) AND goods_id = #{goodsId} ORDER BY chat_id
+	</select>
+	
+	<insert id="insertChat" parameterType="kr.co.waglewagle.domain.ChatVO">
+		INSERT INTO chat(
+			chat_content
+			,chat_send
+			,chat_recieve
+			,goods_id
+		)
+		VALUES(
+			#{chat_content}
+			,#{chat_send}
+			,#{chat_recieve}
+			,#{goods_id}
+		)
+	</insert>
+	
+	<update id="readBid" parameterType="Map">
+		UPDATE 
+			auctions_ing
+    	SET
+    		auctions_seller_read = CASE WHEN auctions_ing_seller = #{users_id} THEN 1 ELSE auctions_seller_read END,
+    		auctions_buyer_read = CASE WHEN auctions_ing_buyer = #{users_id} THEN 1 ELSE auctions_ing_buyer END
+    	WHERE 
+    		auctions_ing_id = #{auctions_ing_id}
+	</update>
+	
+</mapper>
