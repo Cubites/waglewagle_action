@@ -1,1 +1,1 @@
-Test project for Github Action.
+Test Repository for Github Action.
