@@ -5,9 +5,9 @@ name: CI
 # Controls when the workflow will run
 on:
   # 지정한 branch에서 push/pull_request 에 해당하는 command가 수행되면 이 workflow가 동작 합니다. 
-  # 여기서는 간단히 main 브런치에서 push되면서 이 workflow가 실행 되도록 하겠습니다.
+  # 여기서는 간단히 master 브런치에서 push되면서 이 workflow가 실행 되도록 하겠습니다.
   push:
-    branches: [ main ] 
+    branches: [ master ] 
  
   # 이부분은 위의 trigger가 없어도 수동으로 동작 할 수 있게끔 해주는 역할을 합니다.
   workflow_dispatch:
