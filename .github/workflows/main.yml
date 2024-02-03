@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  # PROJECT_NAME: moduform_project
-  BUCKET_NAME: moduform-cicd-bucket
+  PROJECT_NAME: waglewagle_project
+  BUCKET_NAME: waglewagle
   CODE_DEPLOY_APP_NAME: githubaction_test
   DEPLOYMENT_GROUP_NAME: githubaction_test_group
 
@@ -46,11 +46,11 @@ jobs:
         aws-region: ap-northeast-2
         
     - name: upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://github-action-codedeploy-s3/waglewagle/
+      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://waglewagle/PROJECT_NAME/
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
         --application-name $CODE_DEPLOY_APP_NAME
         --deployment-config-name CodeDeployDefault.OneAtATime
         --deployment-group-name $DEPLOYMENT_GROUP_NAME
-        --s3-location bucket=$BUCKET_NAME,bundleType=tgz,key=archive/drcloud.tar.gz
+        --s3-location bucket=$BUCKET_NAME,bundleType=tgz,key=$PROJECT_NAME/drcloud.tar.gz
