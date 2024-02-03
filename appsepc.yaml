@@ -3,9 +3,14 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ubuntu/drcloud-deploy
+    destination: /home/ubuntu/waglewagle_deploy
 permissions:
-  - object: /home/ubuntu/drcloud-deploy
+  - object: /home/ubuntu/waglewagle_deploy
     owner: ubuntu
     group: ubuntu
     mode: 755
+# hooks:
+#   AfterInstall:
+#     - location: scripts/deploy.sh
+#       timeout: 60
+#       runas: ubuntu
