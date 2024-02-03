@@ -16,7 +16,7 @@ on:
 jobs:
   # This workflow contains a single job called "build" 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04.6
     
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -40,11 +40,11 @@ jobs:
         aws-region: ap-northeast-2
         
     - name: upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://github-action-codedeploy-s3/archive/
+      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://github-action-codedeploy-s3/waglewagle/
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
-        --application-name githubaction-test
+        --application-name githubaction_test
         --deployment-config-name CodeDeployDefault.OneAtATime
-        --deployment-group-name githubaction-test-group
+        --deployment-group-name githubaction_test_group
         --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=archive/drcloud.tar.gz
