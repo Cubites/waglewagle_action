@@ -4,13 +4,19 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # 지정한 branch에서 push/pull_request 에 해당하는 command가 수행되면 이 workflow가 동작 합니다. 
-  # 여기서는 간단히 master 브런치에서 push되면서 이 workflow가 실행 되도록 하겠습니다.
   push:
     branches: [ master ] 
+  pull_request:
+    branches: [ master ]
  
   # 이부분은 위의 trigger가 없어도 수동으로 동작 할 수 있게끔 해주는 역할을 합니다.
   workflow_dispatch:
+
+env:
+  # PROJECT_NAME: moduform_project
+  BUCKET_NAME: moduform-cicd-bucket
+  CODE_DEPLOY_APP_NAME: githubaction_test
+  DEPLOYMENT_GROUP_NAME: githubaction_test_group
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -44,7 +50,7 @@ jobs:
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
-        --application-name githubaction_test
+        --application-name $CODE_DEPLOY_APP_NAME
         --deployment-config-name CodeDeployDefault.OneAtATime
-        --deployment-group-name githubaction_test_group
-        --s3-location bucket=github-action-codedeploy-s3,bundleType=tgz,key=archive/drcloud.tar.gz
+        --deployment-group-name $DEPLOYMENT_GROUP_NAME
+        --s3-location bucket=$BUCKET_NAME,bundleType=tgz,key=archive/drcloud.tar.gz
