@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build and Deploy to EC2
 
 # Controls when the workflow will run
 on:
@@ -46,11 +46,11 @@ jobs:
         aws-region: ap-northeast-2
         
     - name: upload to S3
-      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://waglewagle/PROJECT_NAME/
+      run: aws s3 cp --region ap-northeast-2 ./drcloud.tar.gz s3://$BUCKET_NAME/$PROJECT_NAME/drcloud.tar.gz
       
     - name: deploy with AWS codeDeploy
       run: aws deploy create-deployment
         --application-name $CODE_DEPLOY_APP_NAME
-        --deployment-config-name CodeDeployDefault.OneAtATime
+        --deployment-config-name CodeDeployDefault.AllAtOnce
         --deployment-group-name $DEPLOYMENT_GROUP_NAME
         --s3-location bucket=$BUCKET_NAME,bundleType=tgz,key=$PROJECT_NAME/drcloud.tar.gz
